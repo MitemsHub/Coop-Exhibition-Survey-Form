@@ -521,91 +521,119 @@
             'Detergent': 5000
         };
 
-        function calculateTotal() {
-            let total = 0;
+        document.addEventListener("DOMContentLoaded", function () {
+            const quantityInputs = [
+                "riceQuantity", "oilQuantity", "miloQuantity", "noodlesQuantity",
+                "pasteQuantity", "semoQuantity", "sugarQuantity", "pastaQuantity",
+                "maggiQuantity", "cerealQuantity", "soapQuantity"
+            ];
+            const brandSelectors = [
+                "riceBrand", "oilBrand", "noodlesBrand", "pasteBrand",
+                "semoBrand", "sugarBrand", "pastaBrand", "maggiBrand", "cerealBrand"
+            ];
+            const sizeSelectors = [
+                "riceSize", "oilSize", "miloSize", "semoSize", "sugarSize"
+            ];
+            
+            // Function to calculate the total cost
+            function calculateTotal() {
+                let total = 0;
 
-            const riceQuantity = parseInt(document.getElementById("riceQuantity").value);
-            const riceBrand = document.getElementById("riceBrand").value;
-            const riceSize = document.getElementById("riceSize").value;
+                const riceQuantity = parseInt(document.getElementById("riceQuantity").value) || 0;
+                const riceBrand = document.getElementById("riceBrand").value;
+                const riceSize = document.getElementById("riceSize").value;
 
-            if (riceBrand && riceSize) {
-                total += prices['Rice'][riceBrand][riceSize] * riceQuantity;
+                if (riceBrand && riceSize) {
+                    total += prices['Rice'][riceBrand][riceSize] * riceQuantity;
+                }
+
+                const oilQuantity = parseInt(document.getElementById("oilQuantity").value) || 0;
+                const oilBrand = document.getElementById("oilBrand").value;
+                const oilSize = document.getElementById("oilSize").value;
+
+                if (oilBrand && oilSize) {
+                    total += prices['Cooking Oil'][oilBrand][oilSize] * oilQuantity;
+                }
+
+                const miloQuantity = parseInt(document.getElementById("miloQuantity").value) || 0;
+                const miloSize = document.getElementById("miloSize").value;
+
+                if (miloSize) {
+                    total += prices['Milo'][miloSize] * miloQuantity;
+                }
+
+                const noodlesQuantity = parseInt(document.getElementById("noodlesQuantity").value) || 0;
+                const noodlesBrand = document.getElementById("noodlesBrand").value;
+
+                if (noodlesBrand) {
+                    total += prices['Noodles'][noodlesBrand] * noodlesQuantity;
+                }
+
+                const pasteQuantity = parseInt(document.getElementById("pasteQuantity").value) || 0;
+                const pasteBrand = document.getElementById("pasteBrand").value;
+
+                if (pasteBrand) {
+                    total += prices['Paste'][pasteBrand] * pasteQuantity;
+                }
+
+                const semoQuantity = parseInt(document.getElementById("semoQuantity").value) || 0;
+                const semoBrand = document.getElementById("semoBrand").value;
+                const semoSize = document.getElementById("semoSize").value;
+
+                if (semoBrand && semoSize) {
+                    total += prices['Semo'][semoBrand][semoSize] * semoQuantity;
+                }
+
+                const sugarQuantity = parseInt(document.getElementById("sugarQuantity").value) || 0;
+                const sugarBrand = document.getElementById("sugarBrand").value;
+                const sugarSize = document.getElementById("sugarSize").value;
+
+                if (sugarBrand && sugarSize) {
+                    total += prices['Sugar'][sugarBrand][sugarSize] * sugarQuantity;
+                }
+
+                const pastaQuantity = parseInt(document.getElementById("pastaQuantity").value) || 0;
+                const pastaBrand = document.getElementById("pastaBrand").value;
+
+                if (pastaBrand) {
+                    total += prices['Pasta'][pastaBrand] * pastaQuantity;
+                }
+
+                const maggiQuantity = parseInt(document.getElementById("maggiQuantity").value) || 0;
+                const maggiBrand = document.getElementById("maggiBrand").value;
+
+                if (maggiBrand) {
+                    total += prices['Maggi'][maggiBrand] * maggiQuantity;
+                }
+
+                const cerealQuantity = parseInt(document.getElementById("cerealQuantity").value) || 0;
+                const cerealBrand = document.getElementById("cerealBrand").value;
+
+                if (cerealBrand) {
+                    total += prices['Cereal'][cerealBrand] * cerealQuantity;
+                }
+
+                const soapQuantity = parseInt(document.getElementById("soapQuantity").value) || 0;
+
+                if (soapQuantity) {
+                    total += prices['Detergent'] * soapQuantity;
+                }
+
+                document.getElementById("totalCost").innerText = "Total: ₦" + total.toLocaleString();
             }
 
-            const oilQuantity = parseInt(document.getElementById("oilQuantity").value);
-            const oilBrand = document.getElementById("oilBrand").value;
-            const oilSize = document.getElementById("oilSize").value;
+            // Add event listeners to quantity inputs, brand selectors, and size selectors
+            [...quantityInputs, ...brandSelectors, ...sizeSelectors].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener("input", calculateTotal);
+                }
+            });
 
-            if (oilBrand && oilSize) {
-                total += prices['Cooking Oil'][oilBrand][oilSize] * oilQuantity;
-            }
+            // Initial calculation on page load
+            calculateTotal();
+        });
 
-            const miloQuantity= parseInt(document.getElementById("miloQuantity").value);
-            const miloSize= document.getElementById("miloSize").value;
-
-            if (miloSize && miloSize) {
-                total += prices['Milo'][miloSize] * miloQuantity;
-            }
-
-            const noodlesQuantity = parseInt(document.getElementById("noodlesQuantity").value);
-            const noodlesBrand = document.getElementById("noodlesBrand").value;
-
-            if (noodlesBrand && noodlesQuantity) {
-                total += prices['Noodles'][noodlesBrand]* noodlesQuantity;
-            }
-
-            const pasteQuantity = parseInt(document.getElementById("pasteQuantity").value);
-            const pasteBrand = document.getElementById("pasteBrand").value;
-
-            if (pasteBrand && pasteQuantity) {
-                total += prices['Paste'][pasteBrand]* pasteQuantity;
-            }
-
-            const semoQuantity = parseInt(document.getElementById("semoQuantity").value);
-            const semoBrand = document.getElementById("semoBrand").value;
-            const semoSize = document.getElementById("semoSize").value;
-
-            if (semoBrand && semoSize) {
-                total += prices['Semo'][semoBrand][semoSize] * semoQuantity;
-            }
-
-            const sugarQuantity = parseInt(document.getElementById("sugarQuantity").value);
-            const sugarBrand = document.getElementById("sugarBrand").value;
-            const sugarSize = document.getElementById("sugarSize").value;
-
-            if (sugarBrand && sugarSize) {
-                total += prices['Sugar'][sugarBrand][sugarSize] * sugarQuantity;
-            }
-
-            const pastaQuantity = parseInt(document.getElementById("pastaQuantity").value);
-            const pastaBrand = document.getElementById("pastaBrand").value;
-
-            if (pastaBrand && pastaQuantity) {
-                total += prices['Pasta'][pastaBrand]* pastaQuantity;
-            }
-
-            const maggiQuantity = parseInt(document.getElementById("maggiQuantity").value);
-            const maggiBrand= document.getElementById("maggiBrand").value;
-
-            if (maggiBrand && maggiQuantity) {
-                total += prices['Maggi'][maggiBrand]* maggiQuantity;
-            }
-
-            const cerealQuantity= parseInt(document.getElementById("cerealQuantity").value);
-            const cerealBrand= document.getElementById("cerealBrand").value;
-
-            if (cerealBrand && cerealQuantity) {
-                total += prices['Cereal'][cerealBrand]* cerealQuantity;
-            }
-
-            const soapQuantity= parseInt(document.getElementById("soapQuantity").value);
-
-            if (soapQuantity) {
-                total += prices['Detergent']* soapQuantity;
-            }
-
-            document.getElementById("totalCost").innerText = "Total: ₦" + total.toLocaleString();
-        }
 
 
         document.getElementById("surveyForm").onsubmit = function(event) {
