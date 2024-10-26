@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coop Exhibition Survey Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Company Logo" class="logo"> <!-- Add your company logo -->
+            <div class="header-text">
+                <h1>CBN Staff Multi-Purpose Cooperative Society Limited</h1>
+                <p>
+                    In response to current economic realities and our commitment to meeting members' diverse needs, we are pleased to announce that the CBN COOP is about to negotiate on bulk purchase of food items on behalf of members. To enable us conclude this negotiations, we will require inputs from you on the quantity of food items you need. Kindly fill the form and revert early. Thank you for your continued support.
+                </p>
+            </div>
+        </header>
+
+        <form id="surveyForm">
+            <h2>Member Information:</h2>
+            <label for="memberId">Member ID:</label>
+            <input type="text" id="memberId" name="memberId" placeholder="Enter your ID No." required>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value=""> </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="memberCategory">Member Category:</label>
+            <select id="memberCategory" name="memberCategory" required>
+                <option value=""> </option>
+                <option value="Category1">Active Staff</option>
+                <option value="Category2">Retiree</option>
+                <option value="Category3">Pensioner</option>
+                <option value="Category4">Coop Staff</option>
+            </select>
+
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value=""> </option>
+                <option value="Branch1">Head Office</option>
+                <option value="Branch1">Coop Secretariat</option>
+                <option value="Branch1">Abuja</option>
+                <option value="Branch1">Lagos</option>
+                <option value="Branch1">Umuahia</option>
+                <option value="Branch1">Yola</option>
+                <option value="Branch1">Uyo</option>
+                <option value="Branch1">Awka</option>
+                <option value="Branch1">Bauchi</option>
+                <option value="Branch1">Yenagoa</option>
+                <option value="Branch1">Makurdi</option>
+                <option value="Branch1">Maiduguri</option>
+                <option value="Branch1">Calabar</option>
+                <option value="Branch1">Asaba</option>
+                <option value="Branch1">Abakaliki</option>
+                <option value="Branch1">Benin</option>
+                <option value="Branch1">Ado-Ekiti</option>
+                <option value="Branch1">Enugu</option>
+                <option value="Branch1">Gombe</option>
+                <option value="Branch1">Owerri</option>
+                <option value="Branch1">Dutse</option>
+                <option value="Branch1">Kaduna</option>
+                <option value="Branch1">Kano</option>
+                <option value="Branch1">Katsina</option>
+                <option value="Branch1">Birnin-Kebbi</option>
+                <option value="Branch1">Lokoja</option>
+                <option value="Branch1">Ilorin</option>
+                <option value="Branch1">Lafia</option>
+                <option value="Branch1">Minna</option>
+                <option value="Branch1">Abeokuta</option>
+                <option value="Branch1">Akure</option>
+                <option value="Branch1">Oshogbo</option>
+                <option value="Branch1">Ibadan</option>
+                <option value="Branch1">Jos</option>
+                <option value="Branch1">Sokoto</option>
+                <option value="Branch1">Jalingo</option>
+                <option value="Branch1">Damaturu</option>
+                <option value="Branch1">Gusau</option>
+                <option value="Branch1">Port-Harcourt</option>
+            </select>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value=""> </option>
+                <option value="Department1">Coop Secretariat</option>
+                <option value="Department1">Banking Services Department</option>
+                <option value="Department1">Banking Supervision Department</option>
+                <option value="Department1">Branch Operations Department</option>
+                <option value="Department1">Capacity Development Department</option>
+                <option value="Department1">Consumer Protection Department</option>
+                <option value="Department1">Corporate Communications Department</option>
+                <option value="Department1">Corporate Secretariat Department</option>
+                <option value="Department1">Currency Operations Department</option>
+                <option value="Department1">Development Finance Department</option>
+                <option value="Department1">Finance Department</option>
+                <option value="Department1">Financial Markets Department</option>
+                <option value="Department1">Financial Policy & Regulation Department</option>
+                <option value="Department1">Governors Department</option>
+                <option value="Department1">Human Resources Department</option>
+                <option value="Department1">Information Technology Department</option>
+                <option value="Department1">Internal Audit Department</option>
+                <option value="Department1">Lagos CS Directorate</option>
+                <option value="Department1">Lagos EP Directorate</option>
+                <option value="Department1">Lagos FSS Directorate</option>
+                <option value="Department1">Lagos Governors Directorate</option>
+                <option value="Department1">Lagos Learning Center</option>
+                <option value="Department1">Lagos OPS Directorate</option>
+                <option value="Department1">Legal Services Department</option>
+                <option value="Department1">Medical Services Department</option>
+                <option value="Department1">Monetary Policy Department</option>
+                <option value="Department1">Other Financial Institutions Supervision Department</option>
+                <option value="Department1">Payments System Management Department</option>
+                <option value="Department1">Procurement and Support Services Department</option>
+                <option value="Department1">Research Department</option>
+                <option value="Department1">Reserve Management Department</option>
+                <option value="Department1">Risk Management Department</option>
+                <option value="Department1">Security Services Department</option>
+                <option value="Department1">Statistics Department</option>
+                <option value="Department1">Strategy Management Department</option>
+                <option value="Department1">Trade and Exchange Department</option>
+            </select>
+
+            <h2>Select the food items you want to purchase</h2>
+            <!-- Rice Product -->
+            <div class="product">
+                <h3>Rice (Bag)</h3>
+                <label for="riceBrand">Choose Brand:</label>
+                <select id="riceBrand" name="riceBrand" required>
+                    <option value=""></option>
+                    <option value="rice1">Big Bull</option>
+                    <option value="rice2">Golden Star</option>
+                    <option value="rice3">Royal</option>
+                </select>
+                
+                <label for="riceSize">Choose Size:</label>
+                <select id="riceSize" name="riceSize" required>
+                    <option value=""></option>
+                    <option value="riceSize1">50 Kg</option>
+                    <option value="riceSize2">25 Kg</option>
+                    <option value="riceSize3">10 Kg</option>
+                </select>
+                
+                <label for="riceQuantity">Choose Quantity:</label>
+                <select id="riceQuantity" name="riceQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Oil Product -->
+            <div class="product">
+                <h3>Cooking Oil (Carton)</h3>
+                <label for="oilBrand">Choose Brand:</label>
+                <select id="oilBrand" name="oilBrand" required>
+                    <option value=""> </option>
+                    <option value="oil1">Power Oil</option>
+                    <option value="oil2">Kings Oil</option>
+                </select>
+                
+                <label for="oilSize">Choose Size:</label>
+                <select id="oilSize" name="oilSize" required>
+                    <option value=""> </option>
+                    <option value="oilSize1">25 Ltrs</option>
+                    <option value="oilSize2">5 Ltrs</option>
+                    <option value="oilSIze3">2.5 Ltrs</option>
+                </select>
+                
+                <label for="oilQuantity">Choose Quantity:</label>
+                <select id="oilQuantity" name="oilQuantity" required onchange="calculateTotal()">
+                    <option value=""> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Beverages Product -->
+            <div class="product">
+                <h3>Milo (Carton)</h3>           
+                <label for="miloSize">Choose Size:</label>
+                <select id="miloSize" name="miloSize" required>
+                    <option value=""> </option>
+                    <option value="beverage1">800 g</option>
+                    <option value="beverage2">400 g</option>
+                    <option value="beverage3">Roll</option>
+                </select>
+                
+                <label for="miloQuantity">Choose Quantity:</label>
+                <select id="miloQuantity" name="miloQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Noodles Product -->
+            <div class="product">
+                <h3>Noodles</h3>              
+                <label for="noodlesBrand">Choose Brand:</label>
+                <select id="noodlesBrand" name="noodlesBrand" required>
+                    <option value=""> </option>
+                    <option value="noodles1">Indomie Super Pack</option>
+                    <option value="noodles2">Supreme Noodles</option>
+                    <option value="noodles3">Indomitable (small size)</option>
+                </select>
+                
+                <label for="noodlesQuantity">Choose Quantity:</label>
+                <select id="noodlesQuantity" name="noodlesQuantity" required onchange="calculateTotal()">
+                    <option value=""> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Tomato Paste Product -->
+            <div class="product">
+                <h3>Tomato Paste (Carton)</h3>
+                <label for="pasteBrand">Choose Brand:</label>
+                <select id="pasteBrand" name="pasteBrand" required>
+                    <option value=""></option>             
+                    <option value="paste1">Sonia Tin 400g long</option>
+                    <option value="paste2">Sonia Sachet</option>
+                    <option value="paste3">Gino Sachet</option>
+                </select>
+                
+                <label for="pasteQuantity">Choose Quantity:</label>
+                <select id="pasteQuantity" name="pasteQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Semo Product -->
+            <div class="product">
+                <h3>Semo (Bag)</h3>
+                <label for="semoBrand">Choose Brand:</label>
+                <select id="semoBrand" name="semoBrand" required>
+                    <option value=""></option>               
+                    <option value="semo1">Semovita</option>
+                    <option value="semo2">Semolina</option>
+                </select>
+                
+                <label for="semoSize">Choose Size:</label>
+                <select id="semoSize" name="semoSize" required>
+                    <option value=""></option>
+                    <option value="semoSize1">1 Kg</option>
+                    <option value="semoSIze2">10 Kg</option>
+                </select>
+                
+                <label for="semoQuantity">Choose Quantity:</label>
+                <select id="semoQuantity" name="semoQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Sugar Product -->
+            <div class="product">
+                <h3>Sugar (Bag)</h3>
+                <label for="sugaeBrand">Choose Brand:</label>
+                <select id="sugarBrand" name="sugarBrand" required>
+                    <option value=""></option>
+                    <option value="sugar1">Sugar Golden Penny</option>
+                    <option value="sugar2">Dangote Sugar</option>
+                    <option value="sugar3">Golden Penny Cube (Carton)</option>
+                </select>
+                
+                <label for="sugarSize">Choose Size:</label>
+                <select id="sugarSize" name="sugarSize" required>
+                    <option value=""></option>
+                    <option value="sugarSize1">700 g</option>
+                    <option value="sugarSize2">500 g</option>
+                    <option value="sugarSize3">250 g</option>
+                </select>
+                
+                <label for="sugarQuantity">Choose Quantity:</label>
+                <select id="sugarQuantity" name="sugarQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Pasta Product -->
+            <div class="product">
+                <h3>Pasta (Pack)</h3>
+                <label for="pastaBrand">Choose Brand:</label>
+                <select id="pastaBrand" name="pastaBrand" required>
+                    <option value=""></option>                
+                    <option value="pasta1">Spaghetti Golden Penny</option>
+                    <option value="pasta2">Macaroni</option>
+                    <option value="pasta3">Twist</option>
+                </select>
+                
+                <label for="pastaQuantity">Choose Quantity:</label>
+                <select id="pastaQuantity" name="pastaQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Seasoning Product -->
+            <div class="product">
+                <h3>Maggi (Carton)</h3>
+                <label for="maggiBrand">Choose Brand:</label>
+                <select id="maggiBrand" name="maggiBrand" required>
+                    <option value=""></option>
+                    <option value="maggi1">Maggi Star</option>
+                    <option value="maggi2">Knorr Cube</option>
+                </select>
+                
+                <label for="maggiQuantity">Choose Quantity:</label>
+                <select id="maggiQuantity" name="maggiQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Cereal Product -->
+            <div class="product">
+                <h3>Golden Morn</h3>
+                <label for="cerealBrand">Choose Brand:</label>
+                <select id="cerealBrand" name="cerealBrand" required>
+                    <option value=""></option>
+                    <option value="cereal1">Roll</option>
+                    <option value="cereal2">900 g</option>
+                </select>
+                
+                <label for="cerealQuantity">Choose Quantity:</label>
+                <select id="cerealQuantity" name="cerealQuantity" required onchange="calculateTotal()">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Detergent Product -->
+            <div class="product">
+                <h3>Viva detergent 850g (Carton)</h3>               
+                <label for="soapQuantity">Choose Quantity:</label>
+                <select id="soapQuantity" name="soapQuantity" required onchange="calculateTotal()">
+                    <option value=""> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <!-- Payment Method Section -->
+        <div class="form-section">
+            <h3>Payment Method</h3>
+            <label>Select your payment method:</label>
+            <select name="paymentMethod" required>
+                <option value="" disabled selected>Select your Payment</option>
+                <option value="savings">Savings (50% of savings, if no existing loan)</option>
+                <option value="loan">Loan</option>
+                <option value="cash">Cash (Payment before order)</option>
+            </select>
+        </div>
+
+            <!-- Total Calculation -->
+            <h2>Total Cost</h2>
+            <div id="totalCost">Total: ₦0.00</div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const prices = {
+            'Rice': {
+                'rice1': { 'riceSize1': 20000, 'riceSize2': 10000, 'riceSize3': 4000 },
+                'rice2': { 'riceSize1': 22000, 'riceSize2': 11000, 'riceSize3': 4500 },
+                'rice3': { 'riceSize1': 25000, 'riceSize2': 12000, 'riceSize3': 5000 }
+            },
+            'Cooking Oil': {
+                'oil1': { 'oilSize1': 70000, 'oilSize2': 14000, 'oilSize3': 7000 },
+                'oil2': { 'oilSize1': 70000, 'oilSize2': 14000, 'oilSize3': 7000 }
+            },
+            'Milo': {
+                'beverage1': 20000,
+                'beverage2': 10000,
+                'beverage3': 2500
+            },
+            'Noodles': {
+                'noodles1': 20000,
+                'noodles2': 22000,
+                'noodles3': 5000
+            },
+            'Paste': {
+                'paste1': 20000,
+                'paste2': 10000,
+                'paste3': 5000
+            },
+            'Semo': {
+                'semo1': { 'semoSize1': 30000, 'semoSize2': 10000 },
+                'semo2': { 'semoSize1': 20000, 'semoSize2': 10000 }
+            },
+            'Sugar': {
+                'sugar1': { 'sugarSize1': 20000, 'sugarSize2': 10000, 'sugarSize3': 5000},
+                'sugar2': { 'sugarSize1': 22000, 'sugarSize2': 12000, 'sugarSize3': 5200},
+                'sugar3': { 'sugarSize1': 21000, 'sugarSize2': 11000, 'sugarSize3': 5100}
+            },
+            'Pasta': {
+                'pasta1': 15000,
+                'pasta2': 12000,
+                'pasta3': 11000
+            },
+            'Maggi': {
+                'maggi1': 7000,
+                'maggi2': 10000
+            },
+            'Cereal': {
+                'cereal1': 9500,
+                'cereal2': 8000
+            },
+            'Detergent': 5000
+        };
+
+        function calculateTotal() {
+            let total = 0;
+
+            const riceQuantity = parseInt(document.getElementById("riceQuantity").value);
+            const riceBrand = document.getElementById("riceBrand").value;
+            const riceSize = document.getElementById("riceSize").value;
+
+            if (riceBrand && riceSize) {
+                total += prices['Rice'][riceBrand][riceSize] * riceQuantity;
+            }
+
+            const oilQuantity = parseInt(document.getElementById("oilQuantity").value);
+            const oilBrand = document.getElementById("oilBrand").value;
+            const oilSize = document.getElementById("oilSize").value;
+
+            if (oilBrand && oilSize) {
+                total += prices['Cooking Oil'][oilBrand][oilSize] * oilQuantity;
+            }
+
+            const miloQuantity= parseInt(document.getElementById("miloQuantity").value);
+            const miloSize= document.getElementById("miloSize").value;
+
+            if (miloSize && miloSize) {
+                total += prices['Milo'][miloSize] * miloQuantity;
+            }
+
+            const noodlesQuantity = parseInt(document.getElementById("noodlesQuantity").value);
+            const noodlesBrand = document.getElementById("noodlesBrand").value;
+
+            if (noodlesBrand && noodlesQuantity) {
+                total += prices['Noodles'][noodlesBrand]* noodlesQuantity;
+            }
+
+            const pasteQuantity = parseInt(document.getElementById("pasteQuantity").value);
+            const pasteBrand = document.getElementById("pasteBrand").value;
+
+            if (pasteBrand && pasteQuantity) {
+                total += prices['Paste'][pasteBrand]* pasteQuantity;
+            }
+
+            const semoQuantity = parseInt(document.getElementById("semoQuantity").value);
+            const semoBrand = document.getElementById("semoBrand").value;
+            const semoSize = document.getElementById("semoSize").value;
+
+            if (semoBrand && semoSize) {
+                total += prices['Semo'][semoBrand][semoSize] * semoQuantity;
+            }
+
+            const sugarQuantity = parseInt(document.getElementById("sugarQuantity").value);
+            const sugarBrand = document.getElementById("sugarBrand").value;
+            const sugarSize = document.getElementById("sugarSize").value;
+
+            if (sugarBrand && sugarSize) {
+                total += prices['Sugar'][sugarBrand][sugarSize] * sugarQuantity;
+            }
+
+            const pastaQuantity = parseInt(document.getElementById("pastaQuantity").value);
+            const pastaBrand = document.getElementById("pastaBrand").value;
+
+            if (pastaBrand && pastaQuantity) {
+                total += prices['Pasta'][pastaBrand]* pastaQuantity;
+            }
+
+            const maggiQuantity = parseInt(document.getElementById("maggiQuantity").value);
+            const maggiBrand= document.getElementById("maggiBrand").value;
+
+            if (maggiBrand && maggiQuantity) {
+                total += prices['Maggi'][maggiBrand]* maggiQuantity;
+            }
+
+            const cerealQuantity= parseInt(document.getElementById("cerealQuantity").value);
+            const cerealBrand= document.getElementById("cerealBrand").value;
+
+            if (cerealBrand && cerealQuantity) {
+                total += prices['Cereal'][cerealBrand]* cerealQuantity;
+            }
+
+            const soapQuantity= parseInt(document.getElementById("soapQuantity").value);
+
+            if (soapQuantity) {
+                total += prices['Detergent']* soapQuantity;
+            }
+
+            document.getElementById("totalCost").innerText = "Total: ₦" + total.toLocaleString();
+        }
+
+
+        document.getElementById("surveyForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect form data
+            const formData = new FormData(this);
+            
+            fetch('/submit', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.blob(); // Convert response to blob for download
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'responses.xlsx';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        };
+    </script>
+</body>
+</html>

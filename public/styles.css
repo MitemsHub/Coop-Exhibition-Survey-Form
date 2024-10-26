@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #e3f2fd, #bbdefb); /* Gradient background */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding for more space */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px; /* Adjust the size as needed */
+    margin-right: 20px;
+}
+
+.header-text h1 {
+    font-size: 2em; /* Increased font size for header */
+    margin: 0;
+    color: #4A90E2; /* Changed header color */
+}
+
+.header-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #7f8c8d;
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-bottom: 15px;
+    text-align: center; /* Center align the form title */
+}
+
+label {
+    font-size: 1em;
+    margin: 10px 0 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #4A90E2; /* Changed button color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%; /* Full-width button */
+    margin-top: 10px; /* Space above button */
+}
+
+button:hover {
+    background-color: #3A7BB3; /* Darker shade on hover */
+}
+
+/* Product Section Styles */
+.product {
+    background: #ecf0f1;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Removed bouncy effect */
+    transition: background 0.3s ease; /* Subtle background change on hover */
+}
+
+.product:hover {
+    background: #d5dbdb; /* Slightly lighter background on hover */
+}
+
+.product h3 {
+    color: #2c3e50;
+}
+
+#totalCost {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #27ae60;
+    text-align: center; /* Center align total cost */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+    .container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.4em; /* Adjust font size for smaller screens */
+    }
+}
