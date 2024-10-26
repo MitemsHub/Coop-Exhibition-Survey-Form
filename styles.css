@@ -8,12 +8,12 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Increased padding for more space */
+    padding: 20px;
+    background-color: #f5faff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Header Styles */
@@ -25,10 +25,15 @@ header {
 }
 
 .logo {
-    width: 15%; /* Scales based on container width */
-    max-width: 150px; /* Optional: sets a max width so it doesn’t grow too large */
-    height: auto;
-    margin-right: 20px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;    
+}
+
+.logo img {
+    width: 60px; /* Adjust size as needed */
+    border-radius: 50%;
 }
 
 .header-text h1 {
@@ -132,12 +137,16 @@ button:hover {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .container {
-        padding: 15px; /* Reduce padding on smaller screens */
+        padding: 15px;
     }
 
-    h2 {
-        font-size: 1.4em; /* Adjust font size for smaller screens */
+    .header-text h1 {
+        font-size: 1.25rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
     }
 }
