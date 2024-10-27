@@ -635,61 +635,68 @@
             calculateTotal();
         });
 
-        document.getElementById("surveyForm").onsubmit = function(event) {
-            event.preventDefault(); // Prevent the default form submission
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("surveyForm").onsubmit = function(event) {
+                event.preventDefault(); // Prevent form from submitting normally
 
-            // Collect the form data
-            const formData = {
-                memberID: document.getElementById("memberID").value,
-                fullName: document.getElementById("fullName").value,
-                email: document.getElementById("email").value,
-                phone: document.getElementById("phone").value,
-                gender: document.getElementById("gender").value,
-                memberCategory: document.getElementById("memberCategory").value,
-                branch: document.getElementById("branch").value,
-                department: document.getElementById("department").value,
-                riceBrand: document.getElementById("riceBrand").value,
-                riceSize: document.getElementById("riceSize").value,
-                riceQuantity: document.getElementById("riceQuantity").value,
-                oilBrand: document.getElementById("oilBrand").value,
-                oilSize: document.getElementById("oilSize").value,
-                oilQuantity: document.getElementById("oilQuantity").value,
-                miloSize: document.getElementById("miloSize").value,
-                miloQuantity: document.getElementById("miloQuantity").value,
-                noodlesBrand: document.getElementById("noodlesBrand").value,
-                noodlesQuantity: document.getElementById("noodlesQuantity").value,
-                pasteBrand: document.getElementById("pasteBrand").value,
-                pasteQuantity: document.getElementById("pasteQuantity").value,
-                semoBrand: document.getElementById("semoBrand").value,
-                semoSize: document.getElementById("semoSize").value,
-                semoQuantity: document.getElementById("semoQuantity").value,
-                sugarBrand: document.getElementById("sugarBrand").value,
-                sugarSize: document.getElementById("sugarSize").value,
-                sugarQuantity: document.getElementById("sugarQuantity").value,
-                pastaBrand: document.getElementById("pastaBrand").value,
-                pastaQuantity: document.getElementById("pastaQuantity").value,
-                maggiBrand: document.getElementById("maggiBrand").value,
-                maggiQuantity: document.getElementById("maggiQuantity").value,
-                cerealBrand: document.getElementById("cerealBrand").value,
-                cerealQuantity: document.getElementById("cerealQuantity").value,
-                soapQuantity: document.getElementById("soapQuantity").value,
-                totalCost: document.getElementById("totalCost").innerText
+                // Collect the form data with safe access
+                const formData = {
+                    memberID: document.getElementById("memberID")?.value || "",
+                    fullName: document.getElementById("fullName")?.value || "",
+                    email: document.getElementById("email")?.value || "",
+                    phone: document.getElementById("phone")?.value || "",
+                    gender: document.getElementById("gender")?.value || "",
+                    memberCategory: document.getElementById("memberCategory")?.value || "",
+                    branch: document.getElementById("branch")?.value || "",
+                    department: document.getElementById("department")?.value || "",
+                    riceBrand: document.getElementById("riceBrand")?.value || "",
+                    riceSize: document.getElementById("riceSize")?.value || "",
+                    riceQuantity: document.getElementById("riceQuantity")?.value || "",
+                    oilBrand: document.getElementById("oilBrand")?.value || "",
+                    oilSize: document.getElementById("oilSize")?.value || "",
+                    oilQuantity: document.getElementById("oilQuantity")?.value || "",
+                    miloSize: document.getElementById("miloSize")?.value || "",
+                    miloQuantity: document.getElementById("miloQuantity")?.value || "",
+                    noodlesBrand: document.getElementById("noodlesBrand")?.value || "",
+                    noodlesQuantity: document.getElementById("noodlesQuantity")?.value || "",
+                    pasteBrand: document.getElementById("pasteBrand")?.value || "",
+                    pasteQuantity: document.getElementById("pasteQuantity")?.value || "",
+                    semoBrand: document.getElementById("semoBrand")?.value || "",
+                    semoSize: document.getElementById("semoSize")?.value || "",
+                    semoQuantity: document.getElementById("semoQuantity")?.value || "",
+                    sugarBrand: document.getElementById("sugarBrand")?.value || "",
+                    sugarSize: document.getElementById("sugarSize")?.value || "",
+                    sugarQuantity: document.getElementById("sugarQuantity")?.value || "",
+                    pastaBrand: document.getElementById("pastaBrand")?.value || "",
+                    pastaQuantity: document.getElementById("pastaQuantity")?.value || "",
+                    maggiBrand: document.getElementById("maggiBrand")?.value || "",
+                    maggiQuantity: document.getElementById("maggiQuantity")?.value || "",
+                    cerealBrand: document.getElementById("cerealBrand")?.value || "",
+                    cerealQuantity: document.getElementById("cerealQuantity")?.value || "",
+                    soapQuantity: document.getElementById("soapQuantity")?.value || "",
+                    totalCost: document.getElementById("totalCost")?.innerText || ""
+                };
+
+                // Send data to Google Sheets via Google Apps Script
+                fetch("https://script.google.com/macros/s/AKfycbyyzQJ4Wzy-v1DXGw2ShQqdk1BZnsit9HKGlFyyVcsayTqYZlON9UFWRcEuCWF20THK/exec", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        alert("Form submitted successfully!");
+                    } else {
+                        alert("Failed to submit form. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again later.");
+                });
             };
-
-            // Send data to Google Sheets via Google Apps Script
-            fetch("https://script.google.com/macros/s/AKfycbyyzQJ4Wzy-v1DXGw2ShQqdk1BZnsit9HKGlFyyVcsayTqYZlON9UFWRcEuCWF20THK/exec", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                alert("Form submitted successfully!");
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        };
+        });
     </script>
     
 </body>
