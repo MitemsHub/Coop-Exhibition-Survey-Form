@@ -453,16 +453,16 @@
             </div>
 
             <!-- Payment Method Section -->
-        <div class="form-section">
-            <h3>Payment Method</h3>
-            <label>Select your payment method:</label>
-            <select name="paymentMethod" required>
-                <option value="" disabled selected>Select your Payment</option>
-                <option value="savings">Savings (50% of savings, if no existing loan)</option>
-                <option value="loan">Loan</option>
-                <option value="cash">Cash (Payment before order)</option>
-            </select>
-        </div>
+            <div class="form-section">
+                <h3>Payment Method</h3>
+                <label>Select your payment method:</label>
+                <select name="paymentMethod" required>
+                    <option value="" disabled selected>Select your Payment</option>
+                    <option value="savings">Savings (50% of savings, if no existing loan)</option>
+                    <option value="loan">Loan</option>
+                    <option value="cash">Cash (Payment before order)</option>
+                </select>
+            </div>
 
             <!-- Total Calculation -->
             <h2>Total Cost</h2>
@@ -471,7 +471,6 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-
     <script>
         const prices = {
             'Rice': {
@@ -636,38 +635,62 @@
             calculateTotal();
         });
 
-
-
         document.getElementById("surveyForm").onsubmit = function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); // Prevent the default form submission
 
-            // Collect form data
-            const formData = new FormData(this);
-            
-            fetch('/submit', {
+            // Collect the form data
+            const formData = {
+                memberID: document.getElementById("memberID").value,
+                fullName: document.getElementById("fullName").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                gender: document.getElementById("gender").value,
+                memberCategory: document.getElementById("memberCategory").value,
+                branch: document.getElementById("branch").value,
+                department: document.getElementById("department").value,
+                riceBrand: document.getElementById("riceBrand").value,
+                riceSize: document.getElementById("riceSize").value,
+                riceQuantity: document.getElementById("riceQuantity").value,
+                oilBrand: document.getElementById("oilBrand").value,
+                oilSize: document.getElementById("oilSize").value,
+                oilQuantity: document.getElementById("oilQuantity").value,
+                miloSize: document.getElementById("miloSize").value,
+                miloQuantity: document.getElementById("miloQuantity").value,
+                noodlesBrand: document.getElementById("noodlesBrand").value,
+                noodlesQuantity: document.getElementById("noodlesQuantity").value,
+                pasteBrand: document.getElementById("pasteBrand").value,
+                pasteQuantity: document.getElementById("pasteQuantity").value,
+                semoBrand: document.getElementById("semoBrand").value,
+                semoSize: document.getElementById("semoSize").value,
+                semoQuantity: document.getElementById("semoQuantity").value,
+                sugarBrand: document.getElementById("sugarBrand").value,
+                sugarSize: document.getElementById("sugarSize").value,
+                sugarQuantity: document.getElementById("sugarQuantity").value,
+                pastaBrand: document.getElementById("pastaBrand").value,
+                pastaQuantity: document.getElementById("pastaQuantity").value,
+                maggiBrand: document.getElementById("maggiBrand").value,
+                maggiQuantity: document.getElementById("maggiQuantity").value,
+                cerealBrand: document.getElementById("cerealBrand").value,
+                cerealQuantity: document.getElementById("cerealQuantity").value,
+                soapQuantity: document.getElementById("soapQuantity").value,
+                totalCost: document.getElementById("totalCost").innerText
+            };
+
+            // Send data to Google Sheets via Google Apps Script
+            fetch("https://script.google.com/macros/s/AKfycbyyzQJ4Wzy-v1DXGw2ShQqdk1BZnsit9HKGlFyyVcsayTqYZlON9UFWRcEuCWF20THK/exec", {
                 method: 'POST',
-                body: formData,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             })
-            .then(response => {
-                if (response.ok) {
-                    return response.blob(); // Convert response to blob for download
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                alert("Form submitted successfully!");
                 }
-                throw new Error('Network response was not ok.');
             })
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'responses.xlsx';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+            .catch(error => console.error("Error:", error));
         };
     </script>
+    
 </body>
 </html>
