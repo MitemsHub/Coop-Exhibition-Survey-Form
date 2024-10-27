@@ -683,17 +683,22 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     if (data.status === "success") {
                         alert("Form submitted successfully!");
                     } else {
-                        alert("Failed to submit form. Please try again.");
+                        alert("Submission failed. Server returned an unexpected response.");
                     }
                 })
                 .catch(error => {
-                    console.error("Error:", error);
-                    alert("An error occurred. Please try again later.");
+                    console.error("Fetch error:", error);
+                    alert(`An error occurred: ${error.message}. Please try again later.`);
                 });
             };
         });
