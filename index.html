@@ -641,7 +641,7 @@
 
                 // Collect the form data with safe access
                 const formData = {
-                    memberID: document.getElementById("memberID")?.value || "",
+                    memberId: document.getElementById("memberId")?.value || "",
                     fullName: document.getElementById("fullName")?.value || "",
                     email: document.getElementById("email")?.value || "",
                     phone: document.getElementById("phone")?.value || "",
@@ -678,27 +678,17 @@
                 };
 
                 // Send data to Google Sheets via Google Apps Script
-                fetch("https://script.google.com/macros/library/d/1lwaM3G3z5j2rhXNMu0xMYwYGiG_SuQQVpa8vdr5DnG3-vhf4lIOOKYvf/1", {
+                fetch('https://script.google.com/macros/s/AKfycbyyzQJ4Wzy-v1DXGw2ShQqdk1BZnsit9HKGlFyyVcsayTqYZlON9UFWRcEuCWF20THK/exec', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify(formData)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Server error: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.status === "success") {
-                        alert("Form submitted successfully!");
-                    } else {
-                        alert("Submission failed. Server returned an unexpected response.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Fetch error:", error);
-                    alert(`An error occurred: ${error.message}. Please try again later.`);
+                    }).then(response => {
+                    console.log('Form submitted successfully');
+                    }).catch(error => {
+                        console.error('Error:', error);
                 });
             };
         });
