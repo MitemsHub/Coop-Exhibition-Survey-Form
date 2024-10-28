@@ -22,8 +22,9 @@
 
         <form id="surveyForm">
             <h2>Member Information:</h2>
-            <label for="memberId">Member ID:</label>
-            <input type="text" id="memberId" name="memberId" placeholder="Enter your ID No." required>
+            
+            <label for="memberID">Member ID:</label>
+            <input type="text" id="memberID" name="memberID" placeholder="Enter your ID No." required>
 
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name" required>
@@ -641,7 +642,7 @@
 
                 // Collect the form data with safe access
                 const formData = {
-                    memberId: document.getElementById("memberId")?.value || "",
+                    memberID: document.getElementById("memberID")?.value || "",
                     fullName: document.getElementById("fullName")?.value || "",
                     email: document.getElementById("email")?.value || "",
                     phone: document.getElementById("phone")?.value || "",
