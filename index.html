@@ -468,14 +468,14 @@
             </div>
 
             <!-- Payment Method Section -->
-            <div class="form-section">
+            <div class="product">
                 <h3>Payment Method</h3>
                 <label>Select your payment method:</label>
-                <select name="paymentMethod" required>
+                <select name="paymentMethod" id="paymentMethod" required>
                     <option value="" disabled selected>Select your Payment</option>
-                    <option value="savings">Savings (50% of savings, if no existing loan)</option>
-                    <option value="loan">Loan</option>
-                    <option value="cash">Cash (Payment before order)</option>
+                    <option value="pay1">Savings (50% of savings, if no existing loan)</option>
+                    <option value="pay2">Loan</option>
+                    <option value="pay3">Cash (Payment before order)</option>
                 </select>
             </div>
 
@@ -691,6 +691,7 @@
                     cerealBrand: document.getElementById("cerealBrand")?.options[document.getElementById("cerealBrand").selectedIndex]?.text || "",
                     cerealQuantity: document.getElementById("cerealQuantity")?.value || "",
                     soapQuantity: document.getElementById("soapQuantity")?.value || "",
+                    paymentMethod: document.getElementById("paymentMethod")?.options[document.getElementById("paymentMethod").selectedIndex]?.text || "",
                     totalCost: document.getElementById("totalCost")?.innerText || ""
                 };
 
