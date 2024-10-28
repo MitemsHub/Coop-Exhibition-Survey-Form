@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coop Exhibition Survey Form</title>
+        <style>
+            #successMessage, #errorMessage {
+                display: none;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            #successMessage {
+                color: green;
+            }
+            #errorMessage {
+                color: red;
+            }
+        </style>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
@@ -301,7 +314,7 @@
                 <select id="semoSize" name="semoSize">
                     <option value=""></option>
                     <option value="semoSize1">1 Kg</option>
-                    <option value="semoSIze2">10 Kg</option>
+                    <option value="semoSize2">10 Kg</option>
                 </select>
                 
                 <label for="semoQuantity">Choose Quantity:</label>
@@ -471,6 +484,8 @@
 
             <button type="submit">Submit</button>
         </form>
+        <p id="successMessage">Form submitted successfully! Thank you for your response.</p>
+        <p id="errorMessage">Oops! There was an error submitting the form. Please try again later.</p>
     </div>
     <script>
         const prices = {
@@ -641,38 +656,38 @@
                 event.preventDefault(); // Prevent form from submitting normally
 
                 // Collect the form data with safe access
-                const formData = {
+                const formData = {    
                     memberID: document.getElementById("memberID")?.value || "",
                     fullName: document.getElementById("fullName")?.value || "",
                     email: document.getElementById("email")?.value || "",
                     phone: document.getElementById("phone")?.value || "",
-                    gender: document.getElementById("gender")?.value || "",
-                    memberCategory: document.getElementById("memberCategory")?.value || "",
-                    branch: document.getElementById("branch")?.value || "",
-                    department: document.getElementById("department")?.value || "",
-                    riceBrand: document.getElementById("riceBrand")?.value || "",
-                    riceSize: document.getElementById("riceSize")?.value || "",
+                    gender: document.getElementById("gender")?.options[document.getElementById("gender").selectedIndex]?.text || "",
+                    memberCategory: document.getElementById("memberCategory")?.options[document.getElementById("memberCategory").selectedIndex]?.text || "",
+                    branch: document.getElementById("branch")?.options[document.getElementById("branch").selectedIndex]?.text || "",
+                    department: document.getElementById("department")?.options[document.getElementById("department").selectedIndex]?.text || "",
+                    riceBrand: document.getElementById("riceBrand")?.options[document.getElementById("riceBrand").selectedIndex]?.text || "",
+                    riceSize: document.getElementById("riceSize")?.options[document.getElementById("riceSize").selectedIndex]?.text || "",
                     riceQuantity: document.getElementById("riceQuantity")?.value || "",
-                    oilBrand: document.getElementById("oilBrand")?.value || "",
-                    oilSize: document.getElementById("oilSize")?.value || "",
+                    oilBrand: document.getElementById("oilBrand")?.options[document.getElementById("oilBrand").selectedIndex]?.text || "",
+                    oilSize: document.getElementById("oilSize")?.options[document.getElementById("oilSize").selectedIndex]?.text || "",
                     oilQuantity: document.getElementById("oilQuantity")?.value || "",
-                    miloSize: document.getElementById("miloSize")?.value || "",
+                    miloSize: document.getElementById("miloSize")?.options[document.getElementById("miloSize").selectedIndex]?.text || "",
                     miloQuantity: document.getElementById("miloQuantity")?.value || "",
-                    noodlesBrand: document.getElementById("noodlesBrand")?.value || "",
+                    noodlesBrand: document.getElementById("noodlesBrand")?.options[document.getElementById("noodlesBrand").selectedIndex]?.text || "",
                     noodlesQuantity: document.getElementById("noodlesQuantity")?.value || "",
-                    pasteBrand: document.getElementById("pasteBrand")?.value || "",
+                    pasteBrand: document.getElementById("pasteBrand")?.options[document.getElementById("pasteBrand").selectedIndex]?.text || "",
                     pasteQuantity: document.getElementById("pasteQuantity")?.value || "",
-                    semoBrand: document.getElementById("semoBrand")?.value || "",
-                    semoSize: document.getElementById("semoSize")?.value || "",
+                    semoBrand: document.getElementById("semoBrand")?.options[document.getElementById("semoBrand").selectedIndex]?.text || "",
+                    semoSize: document.getElementById("semoSize")?.options[document.getElementById("semoSize").selectedIndex]?.text || "",
                     semoQuantity: document.getElementById("semoQuantity")?.value || "",
-                    sugarBrand: document.getElementById("sugarBrand")?.value || "",
-                    sugarSize: document.getElementById("sugarSize")?.value || "",
+                    sugarBrand: document.getElementById("sugarBrand")?.options[document.getElementById("sugarBrand").selectedIndex]?.text || "",
+                    sugarSize: document.getElementById("sugarSize")?.options[document.getElementById("sugarSize").selectedIndex]?.text || "",
                     sugarQuantity: document.getElementById("sugarQuantity")?.value || "",
-                    pastaBrand: document.getElementById("pastaBrand")?.value || "",
+                    pastaBrand: document.getElementById("pastaBrand")?.options[document.getElementById("pastaBrand").selectedIndex]?.text || "",
                     pastaQuantity: document.getElementById("pastaQuantity")?.value || "",
-                    maggiBrand: document.getElementById("maggiBrand")?.value || "",
+                    maggiBrand: document.getElementById("maggiBrand")?.options[document.getElementById("maggiBrand").selectedIndex]?.text || "",
                     maggiQuantity: document.getElementById("maggiQuantity")?.value || "",
-                    cerealBrand: document.getElementById("cerealBrand")?.value || "",
+                    cerealBrand: document.getElementById("cerealBrand")?.options[document.getElementById("cerealBrand").selectedIndex]?.text || "",
                     cerealQuantity: document.getElementById("cerealQuantity")?.value || "",
                     soapQuantity: document.getElementById("soapQuantity")?.value || "",
                     totalCost: document.getElementById("totalCost")?.innerText || ""
@@ -686,11 +701,23 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
-                    }).then(response => {
-                    console.log('Form submitted successfully');
-                    }).catch(error => {
+                    })                    
+                    .then(() => {
+                        // Assuming the submission is successful (since we can't get the response body)
+                        // Show success message
+                        document.getElementById("successMessage").style.display = "block";
+                        document.getElementById("errorMessage").style.display = "none";
+                        console.log('Form submitted successfully');
+
+                        // Clear the form fields
+                        document.getElementById("surveyForm").reset();
+                    })
+                    .catch(error => {
                         console.error('Error:', error);
-                });
+                        // Show error message if there's a network or server error
+                        document.getElementById("errorMessage").style.display = "block";
+                        document.getElementById("successMessage").style.display = "none";
+                    });
             };
         });
     </script>
