@@ -702,26 +702,25 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
-                    })                    
-                    .then(() => {
-                        // Assuming the submission is successful (since we can't get the response body)
-                        // Show success message
-                        document.getElementById("successMessage").style.display = "block";
-                        document.getElementById("errorMessage").style.display = "none";
-                        console.log('Form submitted successfully');
+                })                    
+                .then(() => {
+                    // Assuming the submission is successful (since we can't get the response body)
+                    // Show success message
+                    document.getElementById("successMessage").style.display = "block";
+                    document.getElementById("errorMessage").style.display = "none";
+                    console.log('Form submitted successfully');
 
-                        // Clear the form fields
-                        document.getElementById("surveyForm").reset();
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        // Show error message if there's a network or server error
-                        document.getElementById("errorMessage").style.display = "block";
-                        document.getElementById("successMessage").style.display = "none";
-                    });
+                    // Clear the form fields
+                    document.getElementById("surveyForm").reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Show error message if there's a network or server error
+                    document.getElementById("errorMessage").style.display = "block";
+                    document.getElementById("successMessage").style.display = "none";
+                });
             };
         });
     </script>
-    
 </body>
 </html>
